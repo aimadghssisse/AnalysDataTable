@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .testme{
+
+        color:red
+      }
+      .test{
+
+        color:green
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+    </table>
+    <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="js/AnalytDataTable.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var header ={
+      tagInside:'thead tr',
+      data:[
+        {name:'a',class:'testme'},
+        {name:'b',id:'new'},
+        {name:'c'},
+        {name:'d',class:'test'}
+      ]
+    };
+      $('table').AnalytData(header);
+    </script>
+  </body>
+</html>
