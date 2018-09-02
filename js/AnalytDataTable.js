@@ -1,5 +1,5 @@
 (function($){
-  $.fn.AnalytData = function(menu){
+  $.fn.AnalytData = function(menu,dataAnalys){
     var Menu = $.extend({
       tagInside : "thead",
       data : {
@@ -10,7 +10,6 @@
     },menu);
     return this.each(function(){
       $.each(Menu.data,function(key,value){
-        console.log(Menu.tagInside);
         $(Menu.tagInside).append('<th>'+value.name+'</th>').each(function(){
           if(value.class)
             $('th').eq(key).addClass(value.class)
@@ -20,6 +19,16 @@
 
         })
       });
+      if(dataAnalys){
+        $.each(dataAnalys,function(key,value){
+          var objkey =Object.keys(value)
+          console.log(objkey.length);
+          $('tbody').append('<tr></tr>');
+          for(i=0;i<objkey.length;i++){
+            $('tbody tr').eq(key).append('<td>'+dataAnalys[key][objkey[i]]+'</td>')
+          }
+        })
+      }
     });
   }
 }(jQuery));
